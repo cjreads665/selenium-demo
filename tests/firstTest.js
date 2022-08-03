@@ -1,11 +1,10 @@
-const {Builder} = require('selenium-webdriver')
-
-async function example(){
-    let driver = await new Builder().forBrowser("MicrosoftEdge").build()
-
-    await driver.get("https://www.seleniumeasy.com/")
+const {By,Key,util} = require("selenium-webdriver")
 
 
+async function firstTest(driver){
+    await driver.manage().setTimeouts( { implicit: 10000 } );
+    await driver.findElement(By.css(`#app-global > div > div.sc-KsaEj.hyjhRa > div > form > div.sc-gHLcSH.sc-dwVMhp.sc-hIkKma.dSUoOY.kPbTCB.iHFeTI > button`)).click()
+   
 }
 
-example()
+module.exports= firstTest
